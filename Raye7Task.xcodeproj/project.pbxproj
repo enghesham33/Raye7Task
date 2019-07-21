@@ -22,6 +22,7 @@
 		E8A9BFE722E4C6C80092A639 /* Raye7TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A9BFE622E4C6C80092A639 /* Raye7TaskTests.swift */; };
 		E8A9BFF222E4C6C80092A639 /* Raye7TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A9BFF122E4C6C80092A639 /* Raye7TaskUITests.swift */; };
 		E8E1F8CF22E51B2E0039111C /* LocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E1F8CE22E51B2E0039111C /* LocalRepository.swift */; };
+		E8E1F8D122E52FF30039111C /* RepositoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E1F8D022E52FF30039111C /* RepositoriesTests.swift */; };
 		E8F18B1A22E4C96700A37F14 /* NavigationBarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F18AE022E4C96700A37F14 /* NavigationBarUtils.swift */; };
 		E8F18B1B22E4C96700A37F14 /* CGRectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F18AE222E4C96700A37F14 /* CGRectExtensions.swift */; };
 		E8F18B1C22E4C96700A37F14 /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F18AE322E4C96700A37F14 /* CGFloatExtensions.swift */; };
@@ -134,6 +135,7 @@
 		E8A9BFF122E4C6C80092A639 /* Raye7TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raye7TaskUITests.swift; sourceTree = "<group>"; };
 		E8A9BFF322E4C6C80092A639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8E1F8CE22E51B2E0039111C /* LocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepository.swift; sourceTree = "<group>"; };
+		E8E1F8D022E52FF30039111C /* RepositoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesTests.swift; sourceTree = "<group>"; };
 		E8F18AE022E4C96700A37F14 /* NavigationBarUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarUtils.swift; sourceTree = "<group>"; };
 		E8F18AE222E4C96700A37F14 /* CGRectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtensions.swift; sourceTree = "<group>"; };
 		E8F18AE322E4C96700A37F14 /* CGFloatExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatExtensions.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 			children = (
 				E8A9BFE622E4C6C80092A639 /* Raye7TaskTests.swift */,
 				E8A9BFE822E4C6C80092A639 /* Info.plist */,
+				E8E1F8D022E52FF30039111C /* RepositoriesTests.swift */,
 			);
 			path = Raye7TaskTests;
 			sourceTree = "<group>";
@@ -700,6 +703,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8A9BFE722E4C6C80092A639 /* Raye7TaskTests.swift in Sources */,
+				E8E1F8D122E52FF30039111C /* RepositoriesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
