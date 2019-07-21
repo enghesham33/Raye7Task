@@ -21,6 +21,7 @@
 		E8A9BFDC22E4C6C80092A639 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8A9BFDA22E4C6C80092A639 /* LaunchScreen.storyboard */; };
 		E8A9BFE722E4C6C80092A639 /* Raye7TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A9BFE622E4C6C80092A639 /* Raye7TaskTests.swift */; };
 		E8A9BFF222E4C6C80092A639 /* Raye7TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A9BFF122E4C6C80092A639 /* Raye7TaskUITests.swift */; };
+		E8E1F8CF22E51B2E0039111C /* LocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E1F8CE22E51B2E0039111C /* LocalRepository.swift */; };
 		E8F18B1A22E4C96700A37F14 /* NavigationBarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F18AE022E4C96700A37F14 /* NavigationBarUtils.swift */; };
 		E8F18B1B22E4C96700A37F14 /* CGRectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F18AE222E4C96700A37F14 /* CGRectExtensions.swift */; };
 		E8F18B1C22E4C96700A37F14 /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F18AE322E4C96700A37F14 /* CGFloatExtensions.swift */; };
@@ -132,6 +133,7 @@
 		E8A9BFED22E4C6C80092A639 /* Raye7TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Raye7TaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8A9BFF122E4C6C80092A639 /* Raye7TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raye7TaskUITests.swift; sourceTree = "<group>"; };
 		E8A9BFF322E4C6C80092A639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8E1F8CE22E51B2E0039111C /* LocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepository.swift; sourceTree = "<group>"; };
 		E8F18AE022E4C96700A37F14 /* NavigationBarUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarUtils.swift; sourceTree = "<group>"; };
 		E8F18AE222E4C96700A37F14 /* CGRectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtensions.swift; sourceTree = "<group>"; };
 		E8F18AE322E4C96700A37F14 /* CGFloatExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatExtensions.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				E8F18B5C22E4CF7300A37F14 /* DataType.swift */,
 				E83F014222E503720093D021 /* Owner.swift */,
 				E83F014622E504080093D021 /* Repository.swift */,
+				E8E1F8CE22E51B2E0039111C /* LocalRepository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				E8F18B3122E4C96700A37F14 /* URLExtensions.swift in Sources */,
 				E8F18B2622E4C96700A37F14 /* BlockPinch.swift in Sources */,
 				E8F18B2922E4C96700A37F14 /* StringExtensions.swift in Sources */,
+				E8E1F8CF22E51B2E0039111C /* LocalRepository.swift in Sources */,
 				E8F18B3922E4C96700A37F14 /* BlockTap.swift in Sources */,
 				E8F18B4222E4C96700A37F14 /* UIButtonExtensions.swift in Sources */,
 				E83F014522E503720093D021 /* Owner.swift in Sources */,

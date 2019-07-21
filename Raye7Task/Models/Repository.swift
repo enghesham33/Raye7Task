@@ -16,7 +16,7 @@ public class Repository: DataType {
     public var owner: Owner!
     public var description: String!
     public var forksCount: Int!
-    public var language: String!
+    public var language: String?
     public var createdAt: String!
     public var htmlUrl: String!
     
@@ -35,6 +35,17 @@ public class Repository: DataType {
         
     }
     
+    public init(name: String, fullName: String, ownerId: Int, ownerLogin: String, ownerAvatar: String, description: String, forksCount: Int, language: String, createdAt: String, htmlUrl: String) {
+        self.name = name
+        self.fullName = fullName
+        self.owner = Owner(id: ownerId, login: ownerLogin, avatarUrl: ownerAvatar)
+        self.description = description
+        self.forksCount = forksCount
+        self.language = language
+        self.createdAt = createdAt
+        self.htmlUrl = htmlUrl
+    }
+    
     //MARK: Encodable
     public func toJSON() -> JSON? {
         return jsonify([
@@ -49,4 +60,7 @@ public class Repository: DataType {
             ])
     }
     
+    public func convertToLocalRepository() -> LocalRepository {
+        return LocalRepository.getInstance(name: name, fullName: fullName, ownerId: owner.id, ownerLogin: owner.login, ownerAvatar: owner.avatarUrl, description: description, forksCount: forksCount, language: language ?? "", createdAt: createdAt, htmlUrl: htmlUrl)
+    }
 }

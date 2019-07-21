@@ -37,6 +37,20 @@ extension RepositoriesPresenter {
             self.view?.handleNoInternetConnection(message: "noInternetConnection".localized())
         }
     }
+    
+    public func getLocalRepositories() -> [Repository] {
+        return LocalRepository.getAllRepositories()
+    }
+    
+    public func deleteAllRepositories() {
+        LocalRepository.deleteAllRepositories()
+    }
+    
+    public func cacheRpositories(repositories: [Repository]) {
+        for repository in repositories {
+            LocalRepository.insertRepository(repository: repository.convertToLocalRepository())
+        }
+    }
 }
 
 extension RepositoriesPresenter: RepositoriesPresenterDelegate {

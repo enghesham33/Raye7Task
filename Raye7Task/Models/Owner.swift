@@ -26,6 +26,12 @@ public class Owner: DataType {
         
     }
     
+    public init(id: Int, login: String, avatarUrl: String) {
+        self.id = id
+        self.login = login
+        self.avatarUrl = avatarUrl
+    }
+    
     //MARK: Encodable
     public func toJSON() -> JSON? {
         return jsonify([

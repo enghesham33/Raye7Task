@@ -33,12 +33,16 @@ public class RepositoriesRepository {
             
             switch response.result {
             case .success(_):
-                let json = (response.result.value as! [Dictionary<String,AnyObject>])
-                var repositories = [Repository]()
-                for repoDic in json {
-                    repositories.append(Repository(json: repoDic)!)
+                if let json = (response.result.value as? [Dictionary<String,AnyObject>]) {
+                    var repositories = [Repository]()
+                    for repoDic in json {
+                        repositories.append(Repository(json: repoDic)!)
+                    }
+                    self.delegate.getRepositoriesSuccess(repositories: repositories)
+                } else {
+                    self.delegate.getRepositoriesFailed(errorMessage: "Parsing error")
                 }
-                self.delegate.getRepositoriesSuccess(repositories: repositories)
+                
                 break
                 
             case .failure(let error):
