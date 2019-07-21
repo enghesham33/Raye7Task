@@ -8,6 +8,7 @@
 
 import Foundation
 import NVActivityIndicatorView
+import SystemConfiguration
 
 public class UiHelpers {
     
@@ -27,4 +28,44 @@ public class UiHelpers {
         }
         return alert
     }
+    
+    class func getLengthAccordingTo(relation: LengthRelation, relativeView: UIView?, percentage: CGFloat) -> CGFloat {
+        
+        switch relation {
+        case .SCREEN_WIDTH:
+            return UIScreen.main.bounds.width * (percentage / 100)
+            
+        case .SCREEN_HEIGHT:
+            return UIScreen.main.bounds.height * (percentage / 100)
+        }
+    }
+    
+    class func isInternetAvailable() -> Bool {
+        var zeroAddress = sockaddr_in()
+        
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        
+        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+                SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+            }
+        }
+        
+        var flags = SCNetworkReachabilityFlags()
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+            return false
+        }
+        let isReachable = flags.contains(.reachable)
+        let needsConnection = flags.contains(.connectionRequired)
+        let isConnected = (isReachable && !needsConnection)
+        return isConnected
+        
+    }
+    
+}
+
+public enum LengthRelation: Int {
+    case SCREEN_WIDTH = 0
+    case SCREEN_HEIGHT = 1
 }

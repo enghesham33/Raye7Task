@@ -24,7 +24,10 @@ class RepositoriesVC: BaseVC {
         repositoriesTableView.dataSource = self
         repositoriesTableView.delegate = self
     }
-
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
 extension RepositoriesVC: UITableViewDataSource, UITableViewDelegate {

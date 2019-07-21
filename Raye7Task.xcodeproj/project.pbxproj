@@ -11,7 +11,6 @@
 		67789668A674AA2D86717D9D /* Pods_Raye7TaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A4E51CEAEA8C1A32195949 /* Pods_Raye7TaskUITests.framework */; };
 		7DF4A3CB385F754937339D4A /* Pods_Raye7Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3743481FDAEBF9FD012925 /* Pods_Raye7Task.framework */; };
 		E8A9BFD222E4C6C70092A639 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A9BFD122E4C6C70092A639 /* AppDelegate.swift */; };
-		E8A9BFD422E4C6C70092A639 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A9BFD322E4C6C70092A639 /* ViewController.swift */; };
 		E8A9BFD722E4C6C70092A639 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8A9BFD522E4C6C70092A639 /* Main.storyboard */; };
 		E8A9BFD922E4C6C80092A639 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8A9BFD822E4C6C80092A639 /* Assets.xcassets */; };
 		E8A9BFDC22E4C6C80092A639 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8A9BFDA22E4C6C80092A639 /* LaunchScreen.storyboard */; };
@@ -78,6 +77,7 @@
 		E8F18B5622E4CA0000A37F14 /* RepositoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F18B5522E4CA0000A37F14 /* RepositoriesVC.swift */; };
 		E8F18B5822E4CA1700A37F14 /* RepositoriesStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8F18B5722E4CA1700A37F14 /* RepositoriesStoryboard.storyboard */; };
 		E8F18B5A22E4CC6A00A37F14 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F18B5922E4CC6A00A37F14 /* RepositoryCell.swift */; };
+		E8F18B5D22E4CF7300A37F14 /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F18B5C22E4CF7300A37F14 /* DataType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,7 +109,6 @@
 		D2EC707D89C9B8AC5CCE944D /* Pods-Raye7Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raye7Task.debug.xcconfig"; path = "Target Support Files/Pods-Raye7Task/Pods-Raye7Task.debug.xcconfig"; sourceTree = "<group>"; };
 		E8A9BFCE22E4C6C70092A639 /* Raye7Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raye7Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8A9BFD122E4C6C70092A639 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E8A9BFD322E4C6C70092A639 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E8A9BFD622E4C6C70092A639 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8A9BFD822E4C6C80092A639 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8A9BFDB22E4C6C80092A639 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -181,6 +180,7 @@
 		E8F18B5522E4CA0000A37F14 /* RepositoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesVC.swift; sourceTree = "<group>"; };
 		E8F18B5722E4CA1700A37F14 /* RepositoriesStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoriesStoryboard.storyboard; sourceTree = "<group>"; };
 		E8F18B5922E4CC6A00A37F14 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		E8F18B5C22E4CF7300A37F14 /* DataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,11 +250,11 @@
 			isa = PBXGroup;
 			children = (
 				E8A9BFD122E4C6C70092A639 /* AppDelegate.swift */,
-				E8A9BFD322E4C6C70092A639 /* ViewController.swift */,
-				E8A9BFD522E4C6C70092A639 /* Main.storyboard */,
 				E8F18ADE22E4C8ED00A37F14 /* RepositoriesScreen */,
+				E8F18B5B22E4CF2A00A37F14 /* Models */,
 				E8F18ADF22E4C96700A37F14 /* Utils */,
 				E8A9BFD822E4C6C80092A639 /* Assets.xcassets */,
+				E8A9BFD522E4C6C70092A639 /* Main.storyboard */,
 				E8A9BFDA22E4C6C80092A639 /* LaunchScreen.storyboard */,
 				E8A9BFDD22E4C6C80092A639 /* Info.plist */,
 				E8F18B5322E4C9C500A37F14 /* BaseVC.swift */,
@@ -360,6 +360,14 @@
 				E8F18B1422E4C96700A37F14 /* UIEdgeInsets.swift */,
 			);
 			path = EZSwiftExtensions;
+			sourceTree = "<group>";
+		};
+		E8F18B5B22E4CF2A00A37F14 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E8F18B5C22E4CF7300A37F14 /* DataType.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F7A38EA174FE2A29A2A51EA3 /* Frameworks */ = {
@@ -623,6 +631,7 @@
 				E8F18B4C22E4C96700A37F14 /* UIColorExtensions.swift in Sources */,
 				E8F18B3D22E4C96700A37F14 /* UIWindowExtensions.swift in Sources */,
 				E8F18B4A22E4C96700A37F14 /* UIAlertControllerExtensions.swift in Sources */,
+				E8F18B5D22E4CF7300A37F14 /* DataType.swift in Sources */,
 				E8F18B5122E4C96700A37F14 /* CommonConstants.swift in Sources */,
 				E8F18B3A22E4C96700A37F14 /* FloatingPointExtensions.swift in Sources */,
 				E8F18B2422E4C96700A37F14 /* UITextViewExtensions.swift in Sources */,
@@ -632,7 +641,6 @@
 				E8F18B5022E4C96700A37F14 /* Colors.swift in Sources */,
 				E8F18B2E22E4C96700A37F14 /* EZSwiftFunctions.swift in Sources */,
 				E8F18B4422E4C96700A37F14 /* UserDefaultsExtension.swift in Sources */,
-				E8A9BFD422E4C6C70092A639 /* ViewController.swift in Sources */,
 				E8F18B3122E4C96700A37F14 /* URLExtensions.swift in Sources */,
 				E8F18B2622E4C96700A37F14 /* BlockPinch.swift in Sources */,
 				E8F18B2922E4C96700A37F14 /* StringExtensions.swift in Sources */,
