@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.13"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="iOS 13.0 system colors" minToolsVersion="11.0"/>
+    </dependencies>
+    <scenes>
+        <!--RepositoriesVC-->
+        <scene sceneID="afl-kU-EQH">
+            <objects>
+                <viewController storyboardIdentifier="RepositoriesVC" id="Dwj-n6-Pqf" customClass="RepositoriesVC" customModule="Raye7Task" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1nF-XG-Ibb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JA9-TL-dg8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepositoryCell" rowHeight="123" id="ajP-qU-A9e" customClass="RepositoryCell" customModule="Raye7Task" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="123"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ajP-qU-A9e" id="31M-Ae-yH3">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="123"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lLk-bm-O5p">
+                                                    <rect key="frame" x="8" y="8" width="398" height="107"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="systemYellowColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="lLk-bm-O5p" secondAttribute="bottom" constant="8" id="N8w-zW-aIH"/>
+                                                <constraint firstItem="lLk-bm-O5p" firstAttribute="top" secondItem="31M-Ae-yH3" secondAttribute="top" constant="8" id="qTe-a2-aTq"/>
+                                                <constraint firstAttribute="trailing" secondItem="lLk-bm-O5p" secondAttribute="trailing" constant="8" id="qib-Wn-mQC"/>
+                                                <constraint firstItem="lLk-bm-O5p" firstAttribute="leading" secondItem="31M-Ae-yH3" secondAttribute="leading" constant="8" id="uix-DW-26v"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JA9-TL-dg8" firstAttribute="top" secondItem="VLA-4y-82p" secondAttribute="top" id="3r5-rX-DN0"/>
+                            <constraint firstItem="JA9-TL-dg8" firstAttribute="leading" secondItem="VLA-4y-82p" secondAttribute="leading" id="4VE-c1-3pC"/>
+                            <constraint firstItem="VLA-4y-82p" firstAttribute="trailing" secondItem="JA9-TL-dg8" secondAttribute="trailing" id="50o-FS-1Hq"/>
+                            <constraint firstItem="VLA-4y-82p" firstAttribute="bottom" secondItem="JA9-TL-dg8" secondAttribute="bottom" id="Shw-FN-ucv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VLA-4y-82p"/>
+                    </view>
+                    <connections>
+                        <outlet property="repositoriesTableView" destination="JA9-TL-dg8" id="ypu-cj-om3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KB9-Cc-3aI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="57.589285714285708"/>
+        </scene>
+    </scenes>
+</document>
