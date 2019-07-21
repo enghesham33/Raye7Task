@@ -9,5 +9,5 @@
 import Foundation
 
 class CommonConstants {
-    public static let BASE_URL = "http://163.172.43.216:8099/FyonkaServiceLayer/"
+    public static let BASE_URL = "https://api.github.com/users/johnsundell/"
 }

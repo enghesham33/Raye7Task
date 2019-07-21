@@ -10,6 +10,11 @@
 		0C68B70575B9C536B15F691D /* Pods_Raye7TaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801A7F47130FF8FB551FBE0D /* Pods_Raye7TaskTests.framework */; };
 		67789668A674AA2D86717D9D /* Pods_Raye7TaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09A4E51CEAEA8C1A32195949 /* Pods_Raye7TaskUITests.framework */; };
 		7DF4A3CB385F754937339D4A /* Pods_Raye7Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3743481FDAEBF9FD012925 /* Pods_Raye7Task.framework */; };
+		E83F013D22E5025F0093D021 /* RepositoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83F013C22E5025F0093D021 /* RepositoriesPresenter.swift */; };
+		E83F013F22E5026E0093D021 /* RepositoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83F013E22E5026E0093D021 /* RepositoriesRepository.swift */; };
+		E83F014522E503720093D021 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83F014222E503720093D021 /* Owner.swift */; };
+		E83F014722E504080093D021 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83F014622E504080093D021 /* Repository.swift */; };
+		E83F014E22E50C4B0093D021 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E83F015022E50C4B0093D021 /* Localizable.strings */; };
 		E8A9BFD222E4C6C70092A639 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A9BFD122E4C6C70092A639 /* AppDelegate.swift */; };
 		E8A9BFD722E4C6C70092A639 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8A9BFD522E4C6C70092A639 /* Main.storyboard */; };
 		E8A9BFD922E4C6C80092A639 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8A9BFD822E4C6C80092A639 /* Assets.xcassets */; };
@@ -107,6 +112,14 @@
 		8A3743481FDAEBF9FD012925 /* Pods_Raye7Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Raye7Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F6FA44B105B8CED96845D2 /* Pods-Raye7Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raye7Task.release.xcconfig"; path = "Target Support Files/Pods-Raye7Task/Pods-Raye7Task.release.xcconfig"; sourceTree = "<group>"; };
 		D2EC707D89C9B8AC5CCE944D /* Pods-Raye7Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Raye7Task.debug.xcconfig"; path = "Target Support Files/Pods-Raye7Task/Pods-Raye7Task.debug.xcconfig"; sourceTree = "<group>"; };
+		E83F013C22E5025F0093D021 /* RepositoriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesPresenter.swift; sourceTree = "<group>"; };
+		E83F013E22E5026E0093D021 /* RepositoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesRepository.swift; sourceTree = "<group>"; };
+		E83F014222E503720093D021 /* Owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		E83F014622E504080093D021 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		E83F014F22E50C4B0093D021 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E83F015122E50C780093D021 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		E83F015222E50C780093D021 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E83F015322E50C780093D021 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E8A9BFCE22E4C6C70092A639 /* Raye7Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raye7Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8A9BFD122E4C6C70092A639 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8A9BFD622E4C6C70092A639 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -250,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				E8A9BFD122E4C6C70092A639 /* AppDelegate.swift */,
+				E8F18B5322E4C9C500A37F14 /* BaseVC.swift */,
 				E8F18ADE22E4C8ED00A37F14 /* RepositoriesScreen */,
 				E8F18B5B22E4CF2A00A37F14 /* Models */,
 				E8F18ADF22E4C96700A37F14 /* Utils */,
@@ -257,7 +271,7 @@
 				E8A9BFD522E4C6C70092A639 /* Main.storyboard */,
 				E8A9BFDA22E4C6C80092A639 /* LaunchScreen.storyboard */,
 				E8A9BFDD22E4C6C80092A639 /* Info.plist */,
-				E8F18B5322E4C9C500A37F14 /* BaseVC.swift */,
+				E83F015022E50C4B0093D021 /* Localizable.strings */,
 			);
 			path = Raye7Task;
 			sourceTree = "<group>";
@@ -286,6 +300,8 @@
 				E8F18B5522E4CA0000A37F14 /* RepositoriesVC.swift */,
 				E8F18B5722E4CA1700A37F14 /* RepositoriesStoryboard.storyboard */,
 				E8F18B5922E4CC6A00A37F14 /* RepositoryCell.swift */,
+				E83F013C22E5025F0093D021 /* RepositoriesPresenter.swift */,
+				E83F013E22E5026E0093D021 /* RepositoriesRepository.swift */,
 			);
 			path = RepositoriesScreen;
 			sourceTree = "<group>";
@@ -366,6 +382,8 @@
 			isa = PBXGroup;
 			children = (
 				E8F18B5C22E4CF7300A37F14 /* DataType.swift */,
+				E83F014222E503720093D021 /* Owner.swift */,
+				E83F014622E504080093D021 /* Repository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -470,6 +488,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = E8A9BFC522E4C6C70092A639;
 			productRefGroup = E8A9BFCF22E4C6C70092A639 /* Products */;
@@ -488,6 +507,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E83F014E22E50C4B0093D021 /* Localizable.strings in Resources */,
 				E8A9BFDC22E4C6C80092A639 /* LaunchScreen.storyboard in Resources */,
 				E8A9BFD922E4C6C80092A639 /* Assets.xcassets in Resources */,
 				E8A9BFD722E4C6C70092A639 /* Main.storyboard in Resources */,
@@ -607,6 +627,7 @@
 				E8F18B3C22E4C96700A37F14 /* IntExtensions.swift in Sources */,
 				E8F18B4B22E4C96700A37F14 /* UIFontExtensions.swift in Sources */,
 				E8F18B2522E4C96700A37F14 /* DictionaryExtensions.swift in Sources */,
+				E83F014722E504080093D021 /* Repository.swift in Sources */,
 				E8F18B4622E4C96700A37F14 /* UIImageViewExtensions.swift in Sources */,
 				E8F18B3822E4C96700A37F14 /* CharacterExtensions.swift in Sources */,
 				E8F18B1D22E4C96700A37F14 /* BlockPan.swift in Sources */,
@@ -646,11 +667,13 @@
 				E8F18B2922E4C96700A37F14 /* StringExtensions.swift in Sources */,
 				E8F18B3922E4C96700A37F14 /* BlockTap.swift in Sources */,
 				E8F18B4222E4C96700A37F14 /* UIButtonExtensions.swift in Sources */,
+				E83F014522E503720093D021 /* Owner.swift in Sources */,
 				E8F18B4722E4C96700A37F14 /* UIUserInterfaceSizeClassExtensions.swift in Sources */,
 				E8F18B1F22E4C96700A37F14 /* UITextFieldExtensions.swift in Sources */,
 				E8F18B4922E4C96700A37F14 /* NSAttributedStringExtensions.swift in Sources */,
 				E8A9BFD222E4C6C70092A639 /* AppDelegate.swift in Sources */,
 				E8F18B3222E4C96700A37F14 /* UIViewControllerExtensions.swift in Sources */,
+				E83F013D22E5025F0093D021 /* RepositoriesPresenter.swift in Sources */,
 				E8F18B4122E4C96700A37F14 /* UISwitchExtensions.swift in Sources */,
 				E8F18B4322E4C96700A37F14 /* NSObjectExtensions.swift in Sources */,
 				E8F18B4E22E4C96700A37F14 /* UiHelpers.swift in Sources */,
@@ -664,6 +687,7 @@
 				E8F18B3522E4C96700A37F14 /* UIImageExtensions.swift in Sources */,
 				E8F18B2222E4C96700A37F14 /* TimerExtensions.swift in Sources */,
 				E8F18B1C22E4C96700A37F14 /* CGFloatExtensions.swift in Sources */,
+				E83F013F22E5026E0093D021 /* RepositoriesRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,10 +723,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E83F015022E50C4B0093D021 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E83F014F22E50C4B0093D021 /* en */,
+				E83F015322E50C780093D021 /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E8A9BFD522E4C6C70092A639 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E8A9BFD622E4C6C70092A639 /* Base */,
+				E83F015122E50C780093D021 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -711,6 +745,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E8A9BFDB22E4C6C80092A639 /* Base */,
+				E83F015222E50C780093D021 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -722,6 +757,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -783,6 +819,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -848,7 +885,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Testing.Raye7Task;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -866,7 +903,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Testing.Raye7Task;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

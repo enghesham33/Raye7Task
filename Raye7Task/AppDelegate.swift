@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func startApplication() {
         let navigationController = UINavigationController(rootViewController: RepositoriesVC.buildVC())
         
-        navigationController.navigationBar.setStyle(style: .solid, tintColor: UIColor.white, forgroundColor: .purple)
+        navigationController.navigationBar.setStyle(style: .solid, tintColor: UIColor.white, forgroundColor: UIColor.AppColors.darkGray)
         
 //        navigationController.navigationBar.setBackgroundImage(#imageLiteral(resourceName: "back"), for: UIBarMetrics.default)
         //navigationController.navigationBar.setStyle(style: .solid, tintColor: UIColor.AppColors., forgroundColor: .white)

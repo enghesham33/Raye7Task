@@ -14,6 +14,6 @@ extension UIColor {
     enum AppColors {
         
         static let primaryColor = UIColor.black
-        static let darkGray = UIColor(named: "#6f6f6f")!
+        static let darkGray = UIColor(hexString: "#6f6f6f")!
     }
 }

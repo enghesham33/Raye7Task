@@ -10,11 +10,11 @@ import Foundation
 
 public class Injector {
     
-//    public class func provideExamplePresenter() -> ExamplePresenter {
-//        return ExamplePresenter(repository: Injector.provideExampleRepository())
-//    }
-//
-//    public class func provideExampleRepository() -> ExampleRepository {
-//        return ExampleRepository()
-//    }
+    public class func provideRepositoriesPresenter() -> RepositoriesPresenter {
+        return RepositoriesPresenter(repositoriesRepository: Injector.provideRepositoriesRepository())
+    }
+
+    public class func provideRepositoriesRepository() -> RepositoriesRepository {
+        return RepositoriesRepository()
+    }
 }

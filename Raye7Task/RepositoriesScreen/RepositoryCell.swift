@@ -7,20 +7,36 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class RepositoryCell: UITableViewCell {
 
     public static let identifier = "RepositoryCell"
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    public var repository: Repository!
+    
+    @IBOutlet weak var repositoryTitleLabel: UILabel!
+    @IBOutlet weak var repositoryDescLabel: UILabel!
+    @IBOutlet weak var forksCountLabel: UILabel!
+    @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet weak var creationDateLabel: UILabel!
+    @IBOutlet weak var ownerImageView: UIImageView!
+    
+    public func populateData() {
+        repositoryTitleLabel.text = repository.name
+        repositoryDescLabel.text = repository.description
+        forksCountLabel.text = "\(repository.forksCount!) Forks"
+        languageLabel.text = repository.language
+        let date = repository.createdAt.split("T")[0]
+        let time = repository.createdAt.split("T")[1].replacingOccurrences(of: "Z", with: "")
+        creationDateLabel.text = date + " " + time
+        if let url = URL(string: repository.owner.avatarUrl) {
+            ownerImageView.af_setImage(withURL: url)
+        }
+        
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    override func prepareForReuse() {
+        self.ownerImageView.image = nil
     }
-
 }

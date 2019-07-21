@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  Raye7Task
+
+  Created by Hesham Donia on 7/21/19.
+  Copyright © 2019 Hesham Donia. All rights reserved.
+*/
+
+"noInternetConnection" = "لا يوجد اتصال بالانترنت. من فضلك تحقق من اتصالك بالشبكة ثم أعد المحاولة مرة أخري";

@@ -29,7 +29,7 @@ public class UiHelpers {
         return alert
     }
     
-    class func getLengthAccordingTo(relation: LengthRelation, relativeView: UIView?, percentage: CGFloat) -> CGFloat {
+    class func getLengthAccordingTo(relation: LengthRelation, percentage: CGFloat) -> CGFloat {
         
         switch relation {
         case .SCREEN_WIDTH:
