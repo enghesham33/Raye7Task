@@ -74,12 +74,9 @@ extension RepositoriesVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
         if ((self.repositoriesTableView.contentOffset.y + self.repositoriesTableView.frame.size.height) >= self.repositoriesTableView.contentSize.height) && canLoadMore { // check if we scrolled to the bottom.
            self.presenter.getRepositories(page: currentPage, perPage: perPage)
         }
-        
-        
     }
 }
 

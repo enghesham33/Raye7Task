@@ -59,8 +59,4 @@ public class Repository: DataType {
             "html_url" ~~> htmlUrl,
             ])
     }
-    
-    public func convertToLocalRepository() -> LocalRepository {
-        return LocalRepository.getInstance(name: name, fullName: fullName, ownerId: owner.id, ownerLogin: owner.login, ownerAvatar: owner.avatarUrl, description: description, forksCount: forksCount, language: language ?? "", createdAt: createdAt, htmlUrl: htmlUrl)
-    }
 }

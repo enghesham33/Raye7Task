@@ -47,8 +47,11 @@ extension RepositoriesPresenter {
     }
     
     public func cacheRpositories(repositories: [Repository]) {
-        for repository in repositories {
-            LocalRepository.insertRepository(repository: repository.convertToLocalRepository())
+       let localRepositories = repositories.map { repository -> LocalRepository in
+            return LocalRepository.getInstance(name: repository.name, fullName: repository.fullName, ownerId: repository.owner.id, ownerLogin: repository.owner.login, ownerAvatar: repository.owner.avatarUrl, description: repository.description, forksCount: repository.forksCount, language: repository.language ?? "", createdAt: repository.createdAt, htmlUrl: repository.htmlUrl)
+        }
+        for localRepository in localRepositories {
+            LocalRepository.insertRepository(repository: localRepository)
         }
     }
 }
