@@ -21,6 +21,7 @@ class RepositoryCell: UITableViewCell {
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var creationDateLabel: UILabel!
     @IBOutlet weak var ownerImageView: UIImageView!
+    @IBOutlet weak var commitsCountLabel: UILabel!
     
     public func populateData() {
         repositoryTitleLabel.text = repository.name
@@ -33,7 +34,13 @@ class RepositoryCell: UITableViewCell {
         if let url = URL(string: repository.owner.avatarUrl) {
             ownerImageView.af_setImage(withURL: url)
         }
-        
+        if let count = repository.commitsCount, count > -1 {
+            showCommitsCount(count: count)
+        }
+    }
+    
+    public func showCommitsCount(count: Int) {
+        commitsCountLabel.text = "\(count) Commits"
     }
 
     override func prepareForReuse() {

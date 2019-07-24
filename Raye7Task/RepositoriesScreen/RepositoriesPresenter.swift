@@ -11,6 +11,8 @@ import Foundation
 public protocol RepositoriesView: class {
     func getRepositoriesSuccess(repositories: [Repository])
     func getRepositoriesFailed(errorMessage: String)
+    func getCommitsSuccess(commitsCount: Int, index: Int)
+    func getCommitsFailed(errorMessage: String)
     func handleNoInternetConnection(message: String)
 }
 
@@ -38,6 +40,14 @@ extension RepositoriesPresenter {
         }
     }
     
+    public func getCommits(url: String, index: Int) {
+        if UiHelpers.isInternetAvailable() {
+            repositoriesRepository.getCommits(url: url, index: index)
+        } else {
+            self.view?.handleNoInternetConnection(message: "noInternetConnection".localized())
+        }
+    }
+    
     public func getLocalRepositories() -> [Repository] {
         return LocalRepository.getAllRepositories()
     }
@@ -48,8 +58,9 @@ extension RepositoriesPresenter {
     
     public func cacheRpositories(repositories: [Repository]) {
        let localRepositories = repositories.map { repository -> LocalRepository in
-            return LocalRepository.getInstance(name: repository.name, fullName: repository.fullName, ownerId: repository.owner.id, ownerLogin: repository.owner.login, ownerAvatar: repository.owner.avatarUrl, description: repository.description, forksCount: repository.forksCount, language: repository.language ?? "", createdAt: repository.createdAt, htmlUrl: repository.htmlUrl)
+        return LocalRepository.getInstance(name: repository.name, fullName: repository.fullName, ownerId: repository.owner.id, ownerLogin: repository.owner.login, ownerAvatar: repository.owner.avatarUrl, description: repository.description, forksCount: repository.forksCount, language: repository.language ?? "", createdAt: repository.createdAt, htmlUrl: repository.htmlUrl, commitsUrl: repository.commitsUrl, commitsCount: repository.commitsCount ?? -1)
         }
+        
         for localRepository in localRepositories {
             LocalRepository.insertRepository(repository: localRepository)
         }
@@ -57,6 +68,14 @@ extension RepositoriesPresenter {
 }
 
 extension RepositoriesPresenter: RepositoriesPresenterDelegate {
+    public func getCommitsSuccess(commitsCount: Int, index: Int) {
+        self.view?.getCommitsSuccess(commitsCount: commitsCount, index: index)
+    }
+    
+    public func getCommitsFailed(errorMessage: String) {
+        self.view?.getCommitsFailed(errorMessage: errorMessage)
+    }
+    
     public func handleNoInternetConnection(message: String) {
         UiHelpers.hideLoader()
         self.view?.handleNoInternetConnection(message: message)

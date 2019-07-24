@@ -22,12 +22,14 @@ public class LocalRepository: Object {
     @objc dynamic var language: String = ""
     @objc dynamic var createdAt: String = ""
     @objc dynamic var htmlUrl: String = ""
+    @objc dynamic var commitsUrl: String = ""
+    @objc dynamic var commitsCount: Int = -1
     
     override public static func primaryKey() -> String? {
         return "id"
     }
     
-    class func getInstance(name: String, fullName: String, ownerId: Int, ownerLogin: String, ownerAvatar: String, description: String, forksCount: Int, language: String, createdAt: String, htmlUrl: String) -> LocalRepository {
+    class func getInstance(name: String, fullName: String, ownerId: Int, ownerLogin: String, ownerAvatar: String, description: String, forksCount: Int, language: String, createdAt: String, htmlUrl: String, commitsUrl: String, commitsCount: Int) -> LocalRepository {
         let localRepository = LocalRepository()
         localRepository.name = name
         localRepository.fullName = fullName
@@ -39,6 +41,8 @@ public class LocalRepository: Object {
         localRepository.language = language
         localRepository.createdAt = createdAt
         localRepository.htmlUrl = htmlUrl
+        localRepository.commitsUrl = commitsUrl
+        localRepository.commitsCount = commitsCount
         return localRepository
     }
     
@@ -78,12 +82,8 @@ public class LocalRepository: Object {
     }
     
     class func getAllRepositories() -> [Repository] {
-        let localRepositories = LocalRepository.getAllSavedRepositories()
-        var repositories = [Repository]()
-        for localRepo in localRepositories {
-            repositories.append(Repository(name: localRepo.name, fullName: localRepo.fullName, ownerId: localRepo.ownerId, ownerLogin: localRepo.ownerLogin, ownerAvatar: localRepo.ownerAvatarUrl, description: localRepo.repoDescription, forksCount: localRepo.forksCount, language: localRepo.language, createdAt: localRepo.createdAt, htmlUrl: localRepo.htmlUrl))
+        return LocalRepository.getAllSavedRepositories().map { (localRepo) -> Repository in
+            return Repository(name: localRepo.name, fullName: localRepo.fullName, ownerId: localRepo.ownerId, ownerLogin: localRepo.ownerLogin, ownerAvatar: localRepo.ownerAvatarUrl, description: localRepo.repoDescription, forksCount: localRepo.forksCount, language: localRepo.language, createdAt: localRepo.createdAt, htmlUrl: localRepo.htmlUrl, commitsUrl: localRepo.commitsUrl, commitsCount: localRepo.commitsCount)
         }
-        
-        return repositories
     }
 }

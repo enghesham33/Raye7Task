@@ -60,11 +60,15 @@ extension RepositoriesVC: UITableViewDataSource, UITableViewDelegate {
         cell.selectionStyle = .none
         cell.repository = self.repositories.get(indexPath.row)
         cell.populateData()
+        if self.repositories.get(indexPath.row)?.commitsCount == nil {
+            self.presenter.getCommits(url: self.repositories.get(indexPath.row)?.commitsUrl ?? "", index: indexPath.row)
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, percentage: 15)
+        return UiHelpers.getLengthAccordingTo(relation: .SCREEN_HEIGHT, percentage: 20)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -81,6 +85,19 @@ extension RepositoriesVC: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension RepositoriesVC: RepositoriesView {
+    func getCommitsSuccess(commitsCount: Int, index: Int) {
+        let indexPath = IndexPath(row: index, section: 0)
+        self.repositories.get(index)?.commitsCount = commitsCount
+        if let cell = self.repositoriesTableView.cellForRow(at: indexPath) as? RepositoryCell {
+            cell.showCommitsCount(count: commitsCount)
+        }
+        
+    }
+    
+    func getCommitsFailed(errorMessage: String) {
+        self.view.makeToast(errorMessage)
+    }
+    
     func getRepositoriesSuccess(repositories: [Repository]) {
         if repositories.count == perPage {
             if self.currentPage == 1 { // saving the first page only
@@ -95,7 +112,6 @@ extension RepositoriesVC: RepositoriesView {
         } else {
             canLoadMore = false
         }
-        
     }
     
     func getRepositoriesFailed(errorMessage: String) {
