@@ -56,9 +56,13 @@ extension RepositoriesPresenter {
         LocalRepository.deleteAllRepositories()
     }
     
+    public func updateRepository(repository: Repository) {
+        LocalRepository.updateRepository(repository: LocalRepository.getInstance(id: repository.id, name: repository.name, fullName: repository.fullName, ownerId: repository.owner.id, ownerLogin: repository.owner.login, ownerAvatar: repository.owner.avatarUrl, description: repository.description, forksCount: repository.forksCount, language: repository.language ?? "", createdAt: repository.createdAt, htmlUrl: repository.htmlUrl, commitsUrl: repository.commitsUrl, commitsCount: repository.commitsCount ?? -1))
+    }
+    
     public func cacheRpositories(repositories: [Repository]) {
        let localRepositories = repositories.map { repository -> LocalRepository in
-        return LocalRepository.getInstance(name: repository.name, fullName: repository.fullName, ownerId: repository.owner.id, ownerLogin: repository.owner.login, ownerAvatar: repository.owner.avatarUrl, description: repository.description, forksCount: repository.forksCount, language: repository.language ?? "", createdAt: repository.createdAt, htmlUrl: repository.htmlUrl, commitsUrl: repository.commitsUrl, commitsCount: repository.commitsCount ?? -1)
+        return LocalRepository.getInstance(id: repository.id, name: repository.name, fullName: repository.fullName, ownerId: repository.owner.id, ownerLogin: repository.owner.login, ownerAvatar: repository.owner.avatarUrl, description: repository.description, forksCount: repository.forksCount, language: repository.language ?? "", createdAt: repository.createdAt, htmlUrl: repository.htmlUrl, commitsUrl: repository.commitsUrl, commitsCount: repository.commitsCount ?? -1)
         }
         
         for localRepository in localRepositories {

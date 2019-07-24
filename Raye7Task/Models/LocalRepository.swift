@@ -29,8 +29,9 @@ public class LocalRepository: Object {
         return "id"
     }
     
-    class func getInstance(name: String, fullName: String, ownerId: Int, ownerLogin: String, ownerAvatar: String, description: String, forksCount: Int, language: String, createdAt: String, htmlUrl: String, commitsUrl: String, commitsCount: Int) -> LocalRepository {
+    class func getInstance(id: Int, name: String, fullName: String, ownerId: Int, ownerLogin: String, ownerAvatar: String, description: String, forksCount: Int, language: String, createdAt: String, htmlUrl: String, commitsUrl: String, commitsCount: Int) -> LocalRepository {
         let localRepository = LocalRepository()
+        localRepository.id = id
         localRepository.name = name
         localRepository.fullName = fullName
         localRepository.ownerId = ownerId
@@ -46,16 +47,6 @@ public class LocalRepository: Object {
         return localRepository
     }
     
-    //Incrementa ID
-    func incrementaID() -> Int{
-        let realm = try! Realm()
-        if let retNext = realm.objects(LocalRepository.self).sorted(byKeyPath: "id").last?.id {
-            return retNext + 1
-        }else{
-            return 1
-        }
-    }
-    
     public static func deleteAllRepositories() {
         let realm = try! Realm()
         do {
@@ -69,7 +60,6 @@ public class LocalRepository: Object {
     
     class func insertRepository(repository: LocalRepository) {
         let realm = try! Realm()
-        repository.id = repository.incrementaID()
         realm.beginWrite()
         realm.add(repository)
         try! realm.commitWrite()
@@ -77,13 +67,23 @@ public class LocalRepository: Object {
     
     class func getAllSavedRepositories() -> [LocalRepository] {
         let realm = try! Realm()
-        let results = realm.objects(LocalRepository.self).sorted(byKeyPath: "id")
+        let results = realm.objects(LocalRepository.self)
         return Array(results)
+    }
+    
+    class func updateRepository(repository: LocalRepository) {
+        let realm = try! Realm()
+        if repository.id > 0 {
+            realm.beginWrite()
+            realm.add(repository, update: Realm.UpdatePolicy.modified)
+            try! realm.commitWrite()
+        }
+        
     }
     
     class func getAllRepositories() -> [Repository] {
         return LocalRepository.getAllSavedRepositories().map { (localRepo) -> Repository in
-            return Repository(name: localRepo.name, fullName: localRepo.fullName, ownerId: localRepo.ownerId, ownerLogin: localRepo.ownerLogin, ownerAvatar: localRepo.ownerAvatarUrl, description: localRepo.repoDescription, forksCount: localRepo.forksCount, language: localRepo.language, createdAt: localRepo.createdAt, htmlUrl: localRepo.htmlUrl, commitsUrl: localRepo.commitsUrl, commitsCount: localRepo.commitsCount)
+            return Repository(id: localRepo.id, name: localRepo.name, fullName: localRepo.fullName, ownerId: localRepo.ownerId, ownerLogin: localRepo.ownerLogin, ownerAvatar: localRepo.ownerAvatarUrl, description: localRepo.repoDescription, forksCount: localRepo.forksCount, language: localRepo.language, createdAt: localRepo.createdAt, htmlUrl: localRepo.htmlUrl, commitsUrl: localRepo.commitsUrl, commitsCount: localRepo.commitsCount)
         }
     }
 }

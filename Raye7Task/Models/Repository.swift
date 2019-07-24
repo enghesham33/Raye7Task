@@ -11,6 +11,7 @@ import Gloss
 
 public class Repository: DataType {
     
+    public var id: Int!
     public var name : String!
     public var fullName : String!
     public var owner: Owner!
@@ -23,6 +24,7 @@ public class Repository: DataType {
     public var commitsCount: Int?
     
     required public init?(json: JSON){
+        id = "id" <~~ json
         name = "name" <~~ json
         fullName = "full_name" <~~ json
         owner = "owner" <~~ json
@@ -39,7 +41,8 @@ public class Repository: DataType {
         
     }
     
-    public init(name: String, fullName: String, ownerId: Int, ownerLogin: String, ownerAvatar: String, description: String, forksCount: Int, language: String, createdAt: String, htmlUrl: String, commitsUrl: String, commitsCount: Int) {
+    public init(id: Int, name: String, fullName: String, ownerId: Int, ownerLogin: String, ownerAvatar: String, description: String, forksCount: Int, language: String, createdAt: String, htmlUrl: String, commitsUrl: String, commitsCount: Int) {
+        self.id = id
         self.name = name
         self.fullName = fullName
         self.owner = Owner(id: ownerId, login: ownerLogin, avatarUrl: ownerAvatar)
@@ -55,6 +58,7 @@ public class Repository: DataType {
     //MARK: Encodable
     public func toJSON() -> JSON? {
         return jsonify([
+            "id" ~~> id,
             "name" ~~> name,
             "full_name" ~~> fullName,
             "owner" ~~> owner,

@@ -88,10 +88,10 @@ extension RepositoriesVC: RepositoriesView {
     func getCommitsSuccess(commitsCount: Int, index: Int) {
         let indexPath = IndexPath(row: index, section: 0)
         self.repositories.get(index)?.commitsCount = commitsCount
+        self.presenter.updateRepository(repository: self.repositories.get(index)!)
         if let cell = self.repositoriesTableView.cellForRow(at: indexPath) as? RepositoryCell {
             cell.showCommitsCount(count: commitsCount)
         }
-        
     }
     
     func getCommitsFailed(errorMessage: String) {
