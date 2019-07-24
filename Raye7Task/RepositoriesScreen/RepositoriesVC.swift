@@ -17,6 +17,7 @@ class RepositoriesVC: BaseVC {
     private var presenter: RepositoriesPresenter!
     var currentPage = 1
     let perPage = 10
+    var canLoadMore = true
     
     public class func buildVC() -> RepositoriesVC {
         let storyboard = UIStoryboard(name: "RepositoriesStoryboard", bundle: nil)
@@ -33,17 +34,17 @@ class RepositoriesVC: BaseVC {
         presenter = Injector.provideRepositoriesPresenter()
         presenter.setView(view: self)
         
-        showFromLocal()
+        displayLocalRepositories()
         
-        showFromCloud()
+        getFromCloud()
     }
     
-    private func showFromLocal() {
+    private func displayLocalRepositories() {
         self.repositories = presenter.getLocalRepositories()
         self.repositoriesTableView.reloadData()
     }
     
-    private func showFromCloud() {
+    private func getFromCloud() {
         presenter.getRepositories(page: currentPage, perPage: perPage)
     }
 }
@@ -59,10 +60,6 @@ extension RepositoriesVC: UITableViewDataSource, UITableViewDelegate {
         cell.selectionStyle = .none
         cell.repository = self.repositories.get(indexPath.row)
         cell.populateData()
-        
-        if indexPath.row == self.repositories.count - 1 {
-            self.presenter.getRepositories(page: currentPage, perPage: perPage)
-        }
         return cell
     }
     
@@ -75,18 +72,33 @@ extension RepositoriesVC: UITableViewDataSource, UITableViewDelegate {
             UIApplication.shared.open(url)
         }
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        if ((self.repositoriesTableView.contentOffset.y + self.repositoriesTableView.frame.size.height) >= self.repositoriesTableView.contentSize.height) && canLoadMore { // check if we scrolled to the bottom.
+           self.presenter.getRepositories(page: currentPage, perPage: perPage)
+        }
+        
+        
+    }
 }
 
 extension RepositoriesVC: RepositoriesView {
     func getRepositoriesSuccess(repositories: [Repository]) {
-        if self.currentPage == 1 { // saving the first page only
-            presenter.deleteAllRepositories()
-            presenter.cacheRpositories(repositories: self.repositories)
-            self.repositories.removeAll()
+        if repositories.count == perPage {
+            if self.currentPage == 1 { // saving the first page only
+                presenter.deleteAllRepositories()
+                presenter.cacheRpositories(repositories: repositories)
+                self.repositories.removeAll()
+            }
+            
+            self.repositories.append(contentsOf: repositories)
+            self.repositoriesTableView.reloadData()
+            self.currentPage += 1
+        } else {
+            canLoadMore = false
         }
-        self.repositories.append(contentsOf: repositories)
-        self.repositoriesTableView.reloadData()
-        self.currentPage += 1
+        
     }
     
     func getRepositoriesFailed(errorMessage: String) {
